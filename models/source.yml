@@ -1,0 +1,16 @@
+version: 2
+
+
+sources:
+  - name: 'vini_public'
+    schema: 'public'
+    tables:
+      - name: 'product'
+      - name: 'customer'
+      - name: 'customer_feedback'
+      - name: 'expansion_outcome'
+  - name: 'vini_staging'
+    schema: 'staging'
+    tables:
+      - name: 'stg_product'
+      - name: 'stg_test'
