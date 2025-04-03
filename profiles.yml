@@ -1,0 +1,92 @@
+CRB_PROJECT:
+  outputs:
+    dev:
+      account: RQFQNKS-GI45660
+      database: VINI
+      password: mw7FVv5WEMrMkhG
+      role: ACCOUNTADMIN
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: ViniVars
+      warehouse: COMPUTE_WH
+  target: dev
+First_Bliss:
+  outputs:
+    dev:
+      account: MYCDDDZ-AYB03319
+      database: DEMO_DB
+      password: VARSHITH@k1234
+      role: ACCOUNTADMIN
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: ViniVarshith
+      warehouse: COMPUTE_WH
+  target: dev
+First_Trail:
+  outputs:
+    dev:
+      account: RQFQNKS-GI45660
+      database: VINI
+      password: mw7FVv5WEMrMkhG
+      role: ACCOUNTADMIN
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: ViniVars
+      warehouse: COMPUTE_WH
+  target: dev
+DS_PROJECT:
+  outputs:
+    dev:
+      dbname: DS_PROJECT
+      host: localhost
+      pass: VARSHITH@
+      port: 5432
+      schema: public
+      threads: 1
+      type: postgres
+      user: postgres
+  target: dev
+
+
+DS_PROJECT_2:
+  outputs:
+    dev:
+      dbname: DS_PROJECT
+      host: localhost
+      pass: VARSHITH@
+      port: 5432
+      schema: public
+      threads: 1
+      type: postgres
+      user: postgres
+    staging:
+      dbname: DS_PROJECT
+      host: localhost
+      pass: VARSHITH@
+      port: 5432
+      schema: staging
+      threads: 1
+      type: postgres
+      user: postgres
+    hypo:
+      dbname: DS_PROJECT
+      host: localhost
+      pass: VARSHITH@
+      port: 5432
+      schema: hypothesis
+      threads: 1
+      type: postgres
+      user: postgres
+    marts:
+      dbname: DS_PROJECT
+      host: localhost
+      pass: VARSHITH@
+      port: 5432
+      schema: marts
+      threads: 1
+      type: postgres
+      user: postgres
+  target: dev
