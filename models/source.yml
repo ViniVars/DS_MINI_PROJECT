@@ -9,6 +9,7 @@ sources:
       - name: 'customer'
       - name: 'customer_feedback'
       - name: 'expansion_outcome'
+      - name: 'utilization'
   - name: 'vini_staging'
     schema: 'staging'
     tables:
