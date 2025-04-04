@@ -11,20 +11,22 @@ from sklearn.utils.class_weight import compute_class_weight
 from imblearn.over_sampling import SMOTE
 
 # Load dataset
-df = pd.read_csv("recursive/updated_dataset_with_churn.csv")
+df = pd.read_csv("recursive/DS_MINI_PROJECT2.csv")
 
 # Handle missing values
 df.fillna(0, inplace=True)
 
+print(df.dtypes)
+
 # Drop unnecessary columns
-df.drop(['id', 'score_date', 'crm_employee_range'], axis=1, inplace=True)
+df.drop(['id', 'score_date', 'crm_employee_range', 'crm_industry_current', 'new_score_date', 'last_score_date'], axis=1, inplace=True)
 
 # Split into features & target
-X = df.drop('churn', axis=1)
-y = df['churn']
+X = df.drop('churned', axis=1)
+y = df['churned']
 
 # Compute class weights before resampling
-class_weights = dict(zip(np.unique(y), compute_class_weight('balanced', classes=np.unique(y), y=y)))
+# class_weights = dict(zip(np.unique(y), compute_class_weight('balanced', classes=np.unique(y), y=y)))
 
 # Apply SMOTE for balancing
 smote = SMOTE(sampling_strategy='auto', random_state=42)
@@ -41,7 +43,7 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 # Initialize and train Logistic Regression
-lr = LogisticRegression(solver='liblinear', max_iter=2000, class_weight=class_weights)
+lr = LogisticRegression(solver='liblinear', max_iter=2000)
 lr.fit(X_train_scaled, y_train)
 
 # Predictions
